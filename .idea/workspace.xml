@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="df11b880-5a02-4f77-8a55-77c4247d64cb" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1rwA2AXxxb0T2FJafCjcIiPSay4" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="javascript.nodejs.core.library.configured.version" value="14.15.3" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../git/task-management-app-project" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.3.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\ALevel\sequelizeTest" />
+      <recent name="C:\ALevel\sequelizeTest\sequelize\models" />
+      <recent name="C:\ALevel\sequelizeTest\sequelize" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\ALevel\sequelizeTest\sequelize" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Node.js.index.js">
+    <configuration name="index.js (1)" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/controllers/index.js" working-dir="$PROJECT_DIR$/controllers">
+      <method v="2" />
+    </configuration>
+    <configuration name="index.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/index.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <configuration name="index.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/connect/index.js" working-dir="$PROJECT_DIR$/connect">
+      <method v="2" />
+    </configuration>
+    <configuration name="sequelizeConnect.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/connect/sequelizeConnect.js" working-dir="$PROJECT_DIR$/connect">
+      <method v="2" />
+    </configuration>
+    <configuration name="userController.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/controllers/userController.js" working-dir="$PROJECT_DIR$/controllers">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.index.js" />
+        <item itemvalue="Node.js.index.js (1)" />
+        <item itemvalue="Node.js.userController.js" />
+        <item itemvalue="Node.js.sequelizeConnect.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="df11b880-5a02-4f77-8a55-77c4247d64cb" name="Default Changelist" comment="" />
+      <created>1619876568281</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1619876568281</updated>
+      <workItem from="1619876569446" duration="1527000" />
+      <workItem from="1619878376694" duration="1796000" />
+      <workItem from="1619880183717" duration="1796000" />
+      <workItem from="1619881991099" duration="1160000" />
+      <workItem from="1619883892035" duration="1802000" />
+      <workItem from="1619885704153" duration="1316000" />
+      <workItem from="1619953751590" duration="1794000" />
+      <workItem from="1619955629525" duration="1796000" />
+      <workItem from="1619957435463" duration="1798000" />
+      <workItem from="1619959247195" duration="1800000" />
+      <workItem from="1619961056788" duration="1797000" />
+      <workItem from="1619962933195" duration="593000" />
+      <workItem from="1620049507435" duration="1794000" />
+      <workItem from="1620051312418" duration="1796000" />
+      <workItem from="1620053119997" duration="1517000" />
+      <workItem from="1620054993127" duration="1737000" />
+      <workItem from="1620056744302" duration="1796000" />
+      <workItem from="1620058551127" duration="846000" />
+      <workItem from="1620074329613" duration="1692000" />
+      <workItem from="1620076134789" duration="1797000" />
+      <workItem from="1620077941056" duration="1797000" />
+      <workItem from="1620079747908" duration="278000" />
+      <workItem from="1620127379854" duration="1796000" />
+      <workItem from="1620129229398" duration="1112000" />
+      <workItem from="1620133639850" duration="811000" />
+      <workItem from="1620135878860" duration="70000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1620135947255">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1620135947254" />
+    <state width="1899" height="227" key="GridCell.Tab.0.bottom" timestamp="1620128855458">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="227" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1620128855458" />
+    <state width="1899" height="227" key="GridCell.Tab.0.center" timestamp="1620128855458">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="227" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1620128855458" />
+    <state width="1899" height="227" key="GridCell.Tab.0.left" timestamp="1620128855458">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="227" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1620128855458" />
+    <state width="1899" height="227" key="GridCell.Tab.0.right" timestamp="1620128855458">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="227" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1620128855458" />
+    <state x="461" y="162" key="SettingsEditor" timestamp="1620055052229">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1620055052229" />
+  </component>
+</project>
