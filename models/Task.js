@@ -5,7 +5,7 @@ module.exports = (sequelize, Model, DataTypes) => {
 
     Task.init({
 
-            taskName : {
+            name : {
                 type : DataTypes.STRING,
                 allowNull : false,
             },
@@ -15,7 +15,7 @@ module.exports = (sequelize, Model, DataTypes) => {
             description : {
                 type : DataTypes.TEXT
             },
-            beginningDate : {
+            startDate : {
                 type : DataTypes.DATEONLY,
                 defaultValue : ()=> new Date().toISOString()
             },

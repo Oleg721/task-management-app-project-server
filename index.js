@@ -3,11 +3,17 @@ const app = express();
 const port = 3000;
 const {userController, taskController} = require(`./controllers`);
 const bodyParser = require(`body-parser`);
+const graphqlHTTP = require(`./graphql`)
+require(`./connectors`).sync();
 
 
 
-app.use(bodyParser.json())
-app.use(express.static(`public`))
+
+app.use(bodyParser.json());
+app.use(express.static(`public`));
+
+app.use('/graphql', graphqlHTTP)
+
 
 app.get('/', (req, res) => {
 
@@ -18,7 +24,7 @@ app.get('/', (req, res) => {
 
 app.get('/users', async (req, res) => {
 
-    let users  = await userController.getAllUser();
+    let users  = await userController.getUsers();
     users = users.map(value => value.dataValues);
     console.log(users);
     res.send(JSON.stringify(users));

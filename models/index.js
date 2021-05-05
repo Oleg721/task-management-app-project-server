@@ -1,11 +1,16 @@
-const {sequelize} = require(`../connect`);
+const {sequelize} = require(`../connectors`);
 const { Model, DataTypes } = require("sequelize");
 
-const user = require(`./User`);
-const task = require(`./Task`);
+const User = require(`./User`)(sequelize, Model, DataTypes);
+const Task = require(`./Task`)(sequelize, Model, DataTypes);
 
-module.exports.User = user(sequelize, Model, DataTypes);
-module.exports.Task = task(sequelize, Model, DataTypes);
+
+
+module.exports.User = User;
+module.exports.Task = Task;
+
+
+
 //module.exports.Task = require(`./Task`);
 //
 // module.exports.User = require(`./User`);

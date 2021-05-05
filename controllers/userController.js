@@ -1,18 +1,46 @@
-const {User: UserController} = require(`../models`);
+const {User} = require(`../models`);
 
 
-async function getAllUser() {
-    return await UserController.findAll();
+module.exports = {
+
+    getUserById : async ({id})=> {
+        console.log(id)
+        return await User.findOne({
+            where: {
+                id : id
+            }});
+    },
+
+
+    getUsers : async ()=> {
+        return await User.findAll();
+    },
+
+
+    addUser : async ({User : {name,nickName}}) => {
+        return await User.create({
+            name : name,
+            nickName: nickName
+        })
+    }
+
 }
 
-module.exports.getAllUser = getAllUser;
+
+/*
+async function getUsers() {
+    return await User.findAll();
+}
+
+module.exports.getUsers = getUsers;
 
 
 async function addUser({name,nickName}) {
-    return await UserController.create({
+    return await User.create({
         name : name,
         nickName: nickName
     })
 }
 
 module.exports.addUser = addUser;
+*/
