@@ -10,7 +10,8 @@ module.exports = (sequelize, Model, DataTypes) => {
                 allowNull : false,
             },
             state : {
-                type : DataTypes.ENUM(`active`, `inWork`)
+                type : DataTypes.ENUM(`ACTIVE`, `IN_WORK`, `COMPLETED`),
+                defaultValue : ()=> `ACTIVE`
             },
             description : {
                 type : DataTypes.TEXT
@@ -24,7 +25,6 @@ module.exports = (sequelize, Model, DataTypes) => {
                 defaultValue : ()=> new Date(Date.now() + (24*60*60*1000)).toISOString()
 
             }
-
         },
         {sequelize,
             modelName : `Task`})

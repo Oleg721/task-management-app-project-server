@@ -1,11 +1,12 @@
 const { Sequelize, Model, DataTypes } = require("sequelize");
-const {development : config} = require('../config/config')
+const config = require('../config/config')
 
 
 const sequelizeConnect = new Sequelize(config.database, config.username, config.password, {
-    host: 'localhost',
+    host: config.host,
     dialect: config.dialect,
-    logger: console.log
+    logger: console.log,
+
 });
 
 

@@ -4,10 +4,17 @@ const {User} = require(`../models`);
 module.exports = {
 
     getUserById : async ({id})=> {
-        console.log(id)
         return await User.findOne({
             where: {
                 id : id
+            }});
+    },
+
+    getUserByNickName : async (nickName)=> {
+        console.log(nickName)
+        return await User.findOne({
+            where: {
+                nickName : nickName
             }});
     },
 
@@ -17,10 +24,12 @@ module.exports = {
     },
 
 
-    addUser : async ({User : {name,nickName}}) => {
+    addUser : async ({name, nickName, passwordHash}) => {
+
         return await User.create({
             name : name,
-            nickName: nickName
+            nickName: nickName,
+            passwordHash : passwordHash
         })
     }
 

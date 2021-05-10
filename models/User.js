@@ -10,6 +10,10 @@ module.exports = (sequelize, Model, DataTypes) => {
                 allowNull : false,
                 unique : true
             },
+        passwordHash: {
+                type : DataTypes.STRING,
+                allowNull : false,
+        },
             name : {
                 type : DataTypes.STRING,
             }

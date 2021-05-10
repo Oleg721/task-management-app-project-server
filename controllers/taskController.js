@@ -1,4 +1,5 @@
-const {Task} = require(`../models`);
+const {Task, User} = require(`../models`);
+const {getUserById} = require(`./userController`)
 
 module.exports = {
 
@@ -14,6 +15,19 @@ module.exports = {
             startDate : startDate,
             endDate: endDate
         })
+    },
+
+    CreateTask: async ({Task : {name, description, startDate, endDate}})=>{
+console.log(`=========`);
+        let user = await getUserById({id:2});
+
+        console.log(name);
+        const tmp = await user.createTask({   name : name,
+                            description : description,
+                            startDate : startDate,
+                            endDate: endDate});
+        console.log(tmp);
+        return tmp
     }
 
 }

@@ -1,17 +1,24 @@
 const { buildSchema } = require('graphql');
 
+
+
 module.exports = buildSchema(`
-    
+   
  type Query {
+ 
+          login(nickName: String, password: String): String
           getUserById(id: ID):User
           getUsers:[User]
-                   
+           
           getTasks:[Task]
+          
     }
     
     
     type Mutation {
-          addUser(User: UserInput): User
+
+          registration(User: UserInput, password: String): String
+          CreateTask(Task: TaskInput): Task
           
     }
 
@@ -26,6 +33,7 @@ module.exports = buildSchema(`
     input UserInput{
           name: String
           nickName: String!
+          password: String!
     }
 
     type Task{
@@ -43,5 +51,6 @@ module.exports = buildSchema(`
       endDate : String
 }
 
-`)
+`);
+
 

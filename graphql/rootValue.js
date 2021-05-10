@@ -1,5 +1,7 @@
-const {userController, taskController} = require(`../controllers`);
+const { userController,
+        taskController,
+        authController} = require(`../controllers`);
 
 
-module.exports = {...userController, ...taskController}
+module.exports = {...userController, ...taskController, ...authController}
 

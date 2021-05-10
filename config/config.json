@@ -1,17 +1,9 @@
 {
-  "development": {
     "username": "root",
     "password": "qwerty123",
     "database": "tests",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  },
-  "test": {
-
-  },
-
-  "production": {
-
-  }
+    "host": "localhost",
+    "dialect": "mysql",
+    "secret": "Some_my_secret_dsgdfd"
 
 }
