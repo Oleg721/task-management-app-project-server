@@ -2,24 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df11b880-5a02-4f77-8a55-77c4247d64cb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/controllers/authController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/validation/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/connectors/sequelizeConnect.js" beforeDir="false" afterPath="$PROJECT_DIR$/connectors/sequelizeConnect.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/taskController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/taskController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/userController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphql/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphql/rootValue.js" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/rootValue.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/graphql/schema.js" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/schema.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/Task.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Task.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,13 +66,13 @@
     <configuration name="index.js (1)" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/controllers/index.js" working-dir="$PROJECT_DIR$/controllers">
       <method v="2" />
     </configuration>
+    <configuration name="index.js (2)" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/models/index.js" working-dir="$PROJECT_DIR$/models">
+      <method v="2" />
+    </configuration>
     <configuration name="index.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/index.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
     <configuration name="index.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/connect/index.js" working-dir="$PROJECT_DIR$/connect">
-      <method v="2" />
-    </configuration>
-    <configuration name="sequelizeConnect.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/connectors/sequelizeConnect.js" working-dir="$PROJECT_DIR$/connectors">
       <method v="2" />
     </configuration>
     <configuration name="test.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/controllers/test.js" working-dir="$PROJECT_DIR$/controllers">
@@ -95,10 +84,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Node.js.index.js" />
+        <item itemvalue="Node.js.index.js (2)" />
         <item itemvalue="Node.js.test.js" />
         <item itemvalue="Node.js.userController.js" />
         <item itemvalue="Node.js.index.js (1)" />
-        <item itemvalue="Node.js.sequelizeConnect.js" />
       </list>
     </recent_temporary>
   </component>
@@ -169,6 +158,28 @@
       <workItem from="1620581633973" duration="39000" />
       <workItem from="1620653706933" duration="1730000" />
       <workItem from="1620655448742" duration="1807000" />
+      <workItem from="1620678507189" duration="1796000" />
+      <workItem from="1620680785599" duration="1798000" />
+      <workItem from="1620682595268" duration="1598000" />
+      <workItem from="1620758810644" duration="1793000" />
+      <workItem from="1620760617491" duration="1796000" />
+      <workItem from="1620762424427" duration="1796000" />
+      <workItem from="1620764231082" duration="1796000" />
+      <workItem from="1620766041546" duration="1804000" />
+      <workItem from="1620767907507" duration="1799000" />
+      <workItem from="1620769721719" duration="1796000" />
+      <workItem from="1620771528351" duration="205000" />
+      <workItem from="1620846379168" duration="599000" />
+      <workItem from="1620849012213" duration="1796000" />
+      <workItem from="1620850822745" duration="1794000" />
+      <workItem from="1620852629480" duration="1796000" />
+      <workItem from="1620854826714" duration="1796000" />
+      <workItem from="1620856633120" duration="1051000" />
+      <workItem from="1620937609016" duration="1794000" />
+      <workItem from="1620939415099" duration="1797000" />
+      <workItem from="1620941223177" duration="1804000" />
+      <workItem from="1620943034090" duration="1796000" />
+      <workItem from="1620944840794" duration="329000" />
     </task>
     <servers />
   </component>
@@ -180,22 +191,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1620581670826" />
-    <state width="1899" height="453" key="GridCell.Tab.0.bottom" timestamp="1620656951847">
+    <state width="1899" height="198" key="GridCell.Tab.0.bottom" timestamp="1620945169943">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="453" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1620656951847" />
-    <state width="1899" height="453" key="GridCell.Tab.0.center" timestamp="1620656951846">
+    <state width="1899" height="198" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1620945169943" />
+    <state width="1899" height="198" key="GridCell.Tab.0.center" timestamp="1620945169943">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="453" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1620656951846" />
-    <state width="1899" height="453" key="GridCell.Tab.0.left" timestamp="1620656951846">
+    <state width="1899" height="198" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1620945169943" />
+    <state width="1899" height="198" key="GridCell.Tab.0.left" timestamp="1620945169943">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="453" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1620656951846" />
-    <state width="1899" height="453" key="GridCell.Tab.0.right" timestamp="1620656951846">
+    <state width="1899" height="198" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1620945169943" />
+    <state width="1899" height="198" key="GridCell.Tab.0.right" timestamp="1620945169943">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="453" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1620656951846" />
+    <state width="1899" height="198" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1620945169943" />
     <state x="461" y="162" key="SettingsEditor" timestamp="1620055052229">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

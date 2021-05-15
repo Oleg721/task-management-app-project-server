@@ -1,7 +1,14 @@
 
+
 module.exports = (sequelize, Model, DataTypes) => {
 
-    class User extends Model{}
+    class User extends Model{
+        get tasks(){
+            return this.getTasks();
+        }
+
+
+    }
 
     User.init({
 

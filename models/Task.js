@@ -1,17 +1,36 @@
 
 module.exports = (sequelize, Model, DataTypes) => {
 
-    class Task extends Model{}
+    class Task extends Model{
+
+         get children(){
+            return this.getChildren();
+        }
+
+        get users(){
+             return this.getUsers();
+        }
+
+        get task(){
+            return this
+        }
+
+    }
 
     Task.init({
 
+        id:{
+            type: DataTypes.INTEGER,
+          autoIncrement: true,
+          primaryKey: true
+        },
             name : {
                 type : DataTypes.STRING,
                 allowNull : false,
             },
             state : {
                 type : DataTypes.ENUM(`ACTIVE`, `IN_WORK`, `COMPLETED`),
-                defaultValue : ()=> `ACTIVE`
+                defaultValue : `ACTIVE`
             },
             description : {
                 type : DataTypes.TEXT
@@ -23,7 +42,11 @@ module.exports = (sequelize, Model, DataTypes) => {
             endDate : {
                 type : DataTypes.DATEONLY,
                 defaultValue : ()=> new Date(Date.now() + (24*60*60*1000)).toISOString()
-
+            },
+            path : {
+                type: DataTypes.STRING,
+                defaultValue: ``,
+                primaryKey: true
             }
         },
         {sequelize,
