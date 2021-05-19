@@ -7,6 +7,8 @@ module.exports = buildSchema(`
     type Query {
  
           login(nickName: String, password: String): String
+          verifyToken(authToken: String): Boolean
+          
           getUserById(id: ID):User
           getUsers:[User]
            

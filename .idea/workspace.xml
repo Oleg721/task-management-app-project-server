@@ -3,12 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="df11b880-5a02-4f77-8a55-77c4247d64cb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/taskController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/taskController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/authController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/authController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/userController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphql/rootValue.js" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/rootValue.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/graphql/schema.js" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/schema.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Task.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Task.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,6 +179,30 @@
       <workItem from="1620941223177" duration="1804000" />
       <workItem from="1620943034090" duration="1796000" />
       <workItem from="1620944840794" duration="329000" />
+      <workItem from="1621077020016" duration="727000" />
+      <workItem from="1621078916726" duration="840000" />
+      <workItem from="1621080740958" duration="600000" />
+      <workItem from="1621156965685" duration="1186000" />
+      <workItem from="1621158785270" duration="599000" />
+      <workItem from="1621160593499" duration="599000" />
+      <workItem from="1621162821582" duration="599000" />
+      <workItem from="1621164832044" duration="900000" />
+      <workItem from="1621167040112" duration="599000" />
+      <workItem from="1621168845979" duration="599000" />
+      <workItem from="1621172758009" duration="606000" />
+      <workItem from="1621174568402" duration="1506000" />
+      <workItem from="1621176428829" duration="391000" />
+      <workItem from="1621363243710" duration="1290000" />
+      <workItem from="1621370547245" duration="67000" />
+      <workItem from="1621371628832" duration="713000" />
+      <workItem from="1621372351354" duration="1502000" />
+      <workItem from="1621374161551" duration="209000" />
+      <workItem from="1621374443059" duration="1222000" />
+      <workItem from="1621448568136" duration="622000" />
+      <workItem from="1621450375117" duration="604000" />
+      <workItem from="1621452180167" duration="1362000" />
+      <workItem from="1621453995462" duration="708000" />
+      <workItem from="1621455801762" duration="887000" />
     </task>
     <servers />
   </component>
@@ -187,26 +210,26 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1620581670826">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1621448581758">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1620581670826" />
-    <state width="1899" height="198" key="GridCell.Tab.0.bottom" timestamp="1620945169943">
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1621448581758" />
+    <state width="1899" height="198" key="GridCell.Tab.0.bottom" timestamp="1621375998258">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="198" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1620945169943" />
-    <state width="1899" height="198" key="GridCell.Tab.0.center" timestamp="1620945169943">
+    <state width="1899" height="198" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1621375998258" />
+    <state width="1899" height="198" key="GridCell.Tab.0.center" timestamp="1621375998258">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="198" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1620945169943" />
-    <state width="1899" height="198" key="GridCell.Tab.0.left" timestamp="1620945169943">
+    <state width="1899" height="198" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1621375998258" />
+    <state width="1899" height="198" key="GridCell.Tab.0.left" timestamp="1621375998258">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="198" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1620945169943" />
-    <state width="1899" height="198" key="GridCell.Tab.0.right" timestamp="1620945169943">
+    <state width="1899" height="198" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1621375998258" />
+    <state width="1899" height="198" key="GridCell.Tab.0.right" timestamp="1621375998258">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="198" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1620945169943" />
+    <state width="1899" height="198" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1621375998258" />
     <state x="461" y="162" key="SettingsEditor" timestamp="1620055052229">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -20,6 +20,7 @@ module.exports = {
 
 
     getUsers : async ()=> {
+        console.log(`TEST!!!!!!!!!!!!!!!!!!!!!!`)
         return await User.findAll();
     },
 

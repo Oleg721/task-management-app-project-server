@@ -35,11 +35,19 @@ module.exports = {
             const {id, passwordHash} = await getUserByNickName(nickName);
             if(!await compareSync(password,passwordHash)) return null;
 
-            return await sign({id: id, nickName: nickName}, secret,{expiresIn: "24h"});
+            return sign({id: id, nickName: nickName}, secret,{expiresIn: "24h"});
 
         }catch (e) { console.log(e.name)}
-    }
+    },
 
+    verifyToken : async ({authToken}) => {
+        try {
+            return  !!verify(authToken, secret)
+        }catch (e) {
+            console.log(`verifyToken >> ` + e.name)
+        }
+        return false
+    }
 }
 
 
