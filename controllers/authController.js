@@ -2,40 +2,40 @@ const {hashSync, compareSync} = require(`bcrypt`);
 const {sign, verify} = require(`jsonwebtoken`);
 const {isPasswordValid, isUserValid} = require(`../validation`);
 const {secret} = require(`../config/config`);
-const {getUserByNickName, addUser} = require(`./userController`);
+const {getUserByLogin, addUser} = require(`./userController`);
 
 
 module.exports = {
 
-    registration : async ({User : {name, nickName, password}}) => {
+    registration : async ({User : {name, login, password}}) => {
 
-        if( !isPasswordValid(password) || !nickName) return null;
+        if( !isPasswordValid(password) || !login) return null;
 
         try {
-            if( await getUserByNickName(nickName)) return null;
+            if( await getUserByLogin(login)) return null;
 
             const passwordHash = await hashSync(password,7);
             const {id} = await addUser({name : name,
-                            nickName: nickName,
+                            login: login,
                             passwordHash : passwordHash})
 
             if(!id) return null;
 
-            return await sign({id: id, nickName: nickName}, secret)
+            return await sign({id: id, login: login}, secret)
         }catch (e) { console.log(e.name)}
 
     },
 
 
 
-    login : async ({nickName, password}) => {
-        if( !isPasswordValid(password) || !nickName) return null;
+    login : async ({login, password}) => {
+        if( !isPasswordValid(password) || !login) return null;
 
         try {
-            const {id, passwordHash} = await getUserByNickName(nickName);
+            const {id, passwordHash} = await getUserByLogin(login);
             if(!await compareSync(password,passwordHash)) return null;
 
-            return sign({id: id, nickName: nickName}, secret,{expiresIn: "24h"});
+            return sign({id: id, login: login}, secret,{expiresIn: "24h"});
 
         }catch (e) { console.log(e.name)}
     },

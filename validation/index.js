@@ -6,8 +6,8 @@ module.exports.isPasswordValid = (password)=>{
 }
 
 
-module.exports.isUserValid = ({nickName})=>{
+module.exports.isUserValid = ({login})=>{
 
-    if(!nickName);
+    if(!login);
     return true
 }

@@ -4,8 +4,15 @@ const { Op } = require("sequelize");
 
 module.exports = {
 
-    getTasks : async ()=>{
-        return await Task.findAll();
+    getProjects : async ({},{user})=>{
+        console.log(user)
+        if (!user) return null
+        console.log(user.getDataValue)
+/*        return await Task.findAll({
+                            where : {
+                                id : user.id
+                            }});*/
+        return await user.getTasks()
     },
 
     getTaskById : async ({id})=>{

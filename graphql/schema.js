@@ -6,13 +6,13 @@ module.exports = buildSchema(`
    
     type Query {
  
-          login(nickName: String, password: String): String
+          login(login: String, password: String): String
           verifyToken(authToken: String): Boolean
           
           getUserById(id: ID):User
           getUsers:[User]
            
-          getTasks:[Task]
+          getProjects:[Task]
           getTaskChildren(Task: TaskInput):[Task]
           getTaskById(id: ID) : Task
           getAllTaskChildren(id: ID) : String
@@ -32,14 +32,14 @@ module.exports = buildSchema(`
           id: ID
           createdAt: String
           name: String
-          nickName : String
+          login : String
           tasks: [Task]
     }
     
 
     input UserInput{
           name: String
-          nickName: String!
+          login: String!
           password: String!
     }
 

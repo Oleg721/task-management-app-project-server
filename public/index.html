@@ -17,7 +17,7 @@
     <label>name</label>
    <input type="text" placeholder="name" id="inputUserName">
   <label>nick</label>
-   <input type="text" placeholder="Nickname" id="inputUserNickName">
+   <input type="text" placeholder="login" id="inputUserlogin">
 </div>
 <button id="getu">get all Users</button>
 <div id="view">
@@ -36,7 +36,7 @@
       viewUl.innerHTML = data.map(value => {
           console.log(value)
          return `<li><span>ID - ${value.id}</span>
-                     <span>Nickname - ${value.nickName}</span>
+                     <span>login - ${value.login}</span>
                       <span>Name - ${value.name}</span>
                       </li>`
       }).join(`\n`);
@@ -51,7 +51,7 @@
               'Content-Type': 'application/json;charset=utf-8'
           },
           body: JSON.stringify({name : inputUserName.value,
-                                nickName : inputUserNickName.value})
+                                login : inputUserlogin.value})
       });
 
       console.log(await response.json())
