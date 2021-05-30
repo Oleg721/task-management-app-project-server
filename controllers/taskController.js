@@ -89,6 +89,17 @@ module.exports = {
 
 
             return {id, name, state, deeps : deeps}}))
+    },
+
+    getUserProjects : async ({id : userId})=> {
+
+        console.log( userId);
+        const user = await User.findByPk(userId);
+        const tasks =  await user.getTasks()
+        console.log( tasks.length);
+        return tasks
+
+
     }
 
 

@@ -4,8 +4,15 @@ const { Model, DataTypes } = require("sequelize");
 const User = require(`./User`)(sequelize, Model, DataTypes);
 const Task = require(`./Task`)(sequelize, Model, DataTypes);
 
-User.belongsToMany(Task, {through: "User_Task"});
-Task.belongsToMany(User, {through: "User_Task"});
+
+
+const User_Task = sequelize.define('User_Task', {role : {
+        type : DataTypes.STRING,
+    }}, { timestamps: false });
+
+User.belongsToMany(Task, {through: User_Task});
+Task.belongsToMany(User, {through: User_Task});
+
 
 Task.hasMany(Task, {onDelete: 'CASCADE',
                             as: "children",
@@ -15,7 +22,7 @@ Task.hasMany(Task, {onDelete: 'CASCADE',
 
 (async ()=>{
     // let p = await Task.findOne({
-    //     where: {
+    //     where: {q
     //         id : 2
     //     }});
     // let c = await Task.findOne({
@@ -37,7 +44,7 @@ module.exports.Task = Task;
 
 
 
-//console.log(Task.prototype)
+//console.log(User.prototype)
 
 
 /*

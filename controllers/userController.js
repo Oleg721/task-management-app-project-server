@@ -8,7 +8,7 @@ module.exports = {
 
     getUserByRequest : async (req)=>{
 
-        console.log(req?.headers);
+       // console.log(req?.headers);
     const authorization = req?.headers?.authorization
     if (!authorization) return null
     if (!authorization.startsWith('Bearer ')) return null

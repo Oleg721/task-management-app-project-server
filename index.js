@@ -18,6 +18,10 @@ app.use(express.static(`public`));
 app.use('/graphql', graphqlHTTP)
 
 
+
+
+///////////////////////////Test REST end points
+
 app.get('/', (req, res) => {
 
     res.sendfile(`index.html`)
@@ -39,6 +43,9 @@ app.post('/add-user', async (req, res) => {
     let userInfo = await userController.addUser(req.body)
     res.send(userInfo.dataValues)
 })
+
+////////////////////////////////////////
+
 
 
 app.listen(port, () => {

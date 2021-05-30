@@ -12,7 +12,8 @@ module.exports = buildSchema(`
           getUserById(id: ID):User
           getUsers:[User]
            
-          getProjects:[Task]
+           
+          getUserProjects(id : ID):[Task]
           getTaskChildren(Task: TaskInput):[Task]
           getTaskById(id: ID) : Task
           getAllTaskChildren(id: ID) : String

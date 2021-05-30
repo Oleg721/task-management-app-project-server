@@ -3,7 +3,7 @@ const {userController : {getUserByRequest}} = require(`../controllers`)
 const schema = require(`./schema`);
 const rootValue = require(`./rootValue`);
 
-console.log(getUserByRequest)
+//console.log(getUserByRequest)
 
 
 module.exports = graphqlHTTP(async (req, res) => ({
