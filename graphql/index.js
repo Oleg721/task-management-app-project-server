@@ -1,5 +1,5 @@
 const { graphqlHTTP} = require('express-graphql');
-const {userController : {getUserByRequest}} = require(`../controllers`)
+const {userController : {getUserByRequest}, taskController  : {getTaskByRequest}} = require(`../controllers`)
 const schema = require(`./schema`);
 const rootValue = require(`./rootValue`);
 

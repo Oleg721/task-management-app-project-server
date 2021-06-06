@@ -4,76 +4,54 @@ const { Op } = require("sequelize");
 
 module.exports = {
 
-    getProjects : async ({},{user})=>{
-        console.log(user)
+
+    getUserProjects : async ({},{user})=>{
+        console.log(user);
         if (!user) return null
-        console.log(user.getDataValue)
-/*        return await Task.findAll({
-                            where : {
-                                id : user.id
-                            }});*/
-        return await user.getTasks()
+        return await user.getTasks({where :
+                                        {path :
+                                            {[Op.notLike] : '/%/%' }}});
     },
 
-    getTaskById : async ({id})=>{
-          return await Task.findByPk(id);
-    },
 
-    addTask : async ({name, state = `active`, description, startDate, endDate}, path)=>{
-        return await Task.create({
+    createTask: async ({Task : {name, description, startDate, endDate}, userId, parentTaskId}, {user})=>{
+
+        if(!user)return null;
+        const taskUser = await User.findByPk(userId)
+        let parentPath = ``;
+        const role = (user.id === taskUser.id) ? `OWNER` : `EXECUTOR`
+
+        const createdTask = await  taskUser.createTask({
             name : name,
-            state : state,
             description : description,
             startDate : startDate,
             endDate: endDate
-        })
-    },
+        }, {through: {role : role}});
 
-
-    createTask: async ({Task : {name, description, startDate, endDate}, userId, parentId})=>{
-
-        console.log(parentId)
-
-        let user = await getUserById({id : userId});
-        let taskID;
-
-        if(parentId){
-            const parentTask = await Task.findByPk(parentId);
-            const {id} = await parentTask.createChild({
-                name : name,
-                description : description,
-                startDate : startDate,
-                endDate: endDate
-            });
-            await Task.update({path : `${parentTask.getDataValue(`path`)}/${id}` },
-                {where: {id : id}})
-            taskID = id;
-
-        } else {
-            const {id} = await user.createTask({
-                name : name,
-                description : description,
-                startDate : startDate,
-                endDate: endDate
-            });
-            await Task.update({path : `/${id}` }, {where: {id : id}});
-            taskID = id;
+        if(parentTaskId){
+            const parentTask = await Task.findByPk(parentTaskId);
+            parentTask.addChild(createdTask);
+            parentPath = parentTask.path
         }
 
-        return await Task.findByPk(taskID);
+        await Task.update({path : `${parentPath}/${createdTask.id}` },
+                         {where: {id : createdTask.id}});
+
+        return await Task.findByPk(createdTask.id);
     },
 
 
     getTaskChildren : async ({Task : {id}})=> {
-        return await Task.findAll({where:
-                {path : {[Op.regexp] : `/${id}/[0-9]+$`}}});
+        let task = await Task.findByPk(id);
+        return await task.getChildren();
     },
 
-    getAllTaskChildren : async ({id : parentId})=> {
+/*
+    getAllTaskChildren : async ({id : loginparentTaskId})=> {
 
-        console.log( parentId);
+        console.log( loginparentTaskId);
         let tmp = await Task.findAll({where:
-                {path : {[Op.regexp] : `/${parentId}/.+`}}});
+                {path : {[Op.regexp] : `/${loginparentTaskId}/.+`}}});
         console.log(tmp.length);
 
         return JSON.stringify(tmp.map(({id,name, state, path}) => {
@@ -82,27 +60,50 @@ module.exports = {
 
 
 
-                let a  =`\/`+parentId+`\/.+`
+                let a  =`\/`+loginparentTaskId+`\/.+`
                 //console.log(a)
                // console.log(path.match(new RegExp(a))[0].split(`/`).length-2)
                 let deeps = path.match(new RegExp(a))[0].split(`/`).length-2;
 
 
             return {id, name, state, deeps : deeps}}))
-    },
-
-    getUserProjects : async ({id : userId})=> {
-
-        console.log( userId);
-        const user = await User.findByPk(userId);
-        const tasks =  await user.getTasks()
-        console.log( tasks.length);
-        return tasks
-
-
     }
+*/
 
 
 
 }
+/*
 
+createTask: async ({Task : {name, description, startDate, endDate}, userId, loginparentTaskId})=>{
+
+    console.log(loginparentTaskId)
+
+    let user = await getUserById({id : userId});
+    let taskID;
+
+    if(loginparentTaskId){
+        const parentTask = await Task.findByPk(loginparentTaskId);
+        const {id} = await parentTask.createChild({
+            name : name,
+            description : description,
+            startDate : startDate,
+            endDate: endDate
+        });
+        await Task.update({path : `${parentTask.getDataValue(`path`)}/${id}` },
+            {where: {id : id}})
+        taskID = id;
+
+    } else {
+        const {id} = await user.createTask({
+            name : name,
+            description : description,
+            startDate : startDate,
+            endDate: endDate
+        });
+        await Task.update({path : `/${id}` }, {where: {id : id}});
+        taskID = id;
+    }
+
+    return await Task.findByPk(taskID);
+},*/
