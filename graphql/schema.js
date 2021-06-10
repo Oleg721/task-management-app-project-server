@@ -12,17 +12,19 @@ module.exports = buildSchema(`
           getUserById(id: ID):User
           getUsers:[User]
            
-           
           getUserProjects:[Task]
+          getTaskById(id : ID):Task
           getTaskChildren(Task: TaskInput):[Task]
           getAllTaskChildren(id: ID) : String
+          
+          
     }
     
     
     type Mutation {
 
           registration(User: UserInput, password: String): String
-          createTask(Task: TaskInput, userId: ID, parentTaskId: ID): Task
+          createTask(Task: TaskInput, usersId: [ID], parentTaskId: ID): Task
           createSubTask(Task: TaskInput, parentId: ID): Task
           
     }
@@ -54,6 +56,7 @@ module.exports = buildSchema(`
             children: [Task]
             users: [User]
             task: Task
+            countChildren: Int
     }
     
     input TaskInput{

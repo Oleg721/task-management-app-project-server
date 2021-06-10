@@ -4,7 +4,7 @@ module.exports = (sequelize, Model, DataTypes) => {
     class Task extends Model{
 
          get children(){
-            return this.getChildren();
+            return this.getTaskChildren();
         }
 
         get users(){
@@ -13,6 +13,10 @@ module.exports = (sequelize, Model, DataTypes) => {
 
         get task(){
             return this
+        }
+
+        get countChildren(){
+             return this.countTaskChildren();
         }
 
     }

@@ -15,7 +15,7 @@ Task.belongsToMany(User, {through: User_Task});
 
 
 Task.hasMany(Task, {onDelete: 'CASCADE',
-                            as: "children",
+                            as: "TaskChildren",
                             foreignKey: `parent`});
 
 
@@ -44,7 +44,7 @@ module.exports.Task = Task;
 
 
 
-//console.log(User.prototype)
+//console.log(Task.prototype)
 
 
 /*
@@ -73,17 +73,16 @@ TASK
   removeUser: [Function (anonymous)],
   removeUsers: [Function (anonymous)],
   createUser: [Function (anonymous)],
-
-  getChildren: [Function (anonymous)],
-  countChildren: [Function (anonymous)],
-  hasChild: [Function (anonymous)],
-  hasChildren: [Function (anonymous)],
-  setChildren: [Function (anonymous)],
-  addChild: [Function (anonymous)],
-  addChildren: [Function (anonymous)],
-  removeChild: [Function (anonymous)],
-  removeChildren: [Function (anonymous)],
-  createChild: [Function (anonymous)]
+  getTaskChildren: [Function (anonymous)],
+  countTaskChildren: [Function (anonymous)],
+  hasTaskChild: [Function (anonymous)],
+  hasTaskChildren: [Function (anonymous)],
+  setTaskChildren: [Function (anonymous)],
+  addTaskChild: [Function (anonymous)],
+  addTaskChildren: [Function (anonymous)],
+  removeTaskChild: [Function (anonymous)],
+  removeTaskChildren: [Function (anonymous)],
+  createTaskChild: [Function (anonymous)]
 
 */
 

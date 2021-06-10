@@ -4,6 +4,24 @@ const { Op } = require("sequelize");
 
 module.exports = {
 
+    getTaskById: async ({id})=>{
+
+        // let usersId = [1,2]
+        // let users = await User.findAll({where :
+        //         {id: {
+        //                 [Op.or] : [...usersId]}}});
+        //
+        // let createdTask = await Task.findByPk(75)
+        //
+        // await createdTask.addUsers(users, {through: {role : `EXECUTOR`}});
+        //
+
+
+        let task = await Task.findByPk(id);
+        return task
+
+    },
+
 
     getUserProjects : async ({},{user})=>{
         console.log(user);
@@ -14,23 +32,39 @@ module.exports = {
     },
 
 
-    createTask: async ({Task : {name, description, startDate, endDate}, userId, parentTaskId}, {user})=>{
+    createTask: async ({Task : {name, description, startDate, endDate}, usersId, parentTaskId}, {user})=>{
+
 
         if(!user)return null;
-        const taskUser = await User.findByPk(userId)
         let parentPath = ``;
-        const role = (user.id === taskUser.id) ? `OWNER` : `EXECUTOR`
+        let role = ``
+        if(usersId.length){
+            const creatorUserIndex = usersId.indexOf(user.id.toString());
+            role =   creatorUserIndex === -1 ? `OWNER` : (usersId.splice(creatorUserIndex, 1) , `OWNER_AND_EXECUTOR`);
+        } else {
+            role = `OWNER_AND_EXECUTOR`;
+        }
 
-        const createdTask = await  taskUser.createTask({
+        console.log(usersId);
+        console.log(role);
+        const createdTask = await  user.createTask({
             name : name,
             description : description,
             startDate : startDate,
             endDate: endDate
         }, {through: {role : role}});
 
+        if(usersId.length) {
+            const users = await User.findAll({where :
+                                        {id: {
+                                            [Op.or] : [...usersId]}}});
+            console.log(users);
+            await createdTask.addUsers(users, {through: {role : `EXECUTOR`}});
+        }
+
         if(parentTaskId){
             const parentTask = await Task.findByPk(parentTaskId);
-            parentTask.addChild(createdTask);
+            await parentTask.addTaskChild(createdTask);
             parentPath = parentTask.path
         }
 
@@ -38,72 +72,16 @@ module.exports = {
                          {where: {id : createdTask.id}});
 
         return await Task.findByPk(createdTask.id);
+
     },
 
 
     getTaskChildren : async ({Task : {id}})=> {
         let task = await Task.findByPk(id);
-        return await task.getChildren();
+
+        return await task.getTaskChildren();
     },
-
-/*
-    getAllTaskChildren : async ({id : loginparentTaskId})=> {
-
-        console.log( loginparentTaskId);
-        let tmp = await Task.findAll({where:
-                {path : {[Op.regexp] : `/${loginparentTaskId}/.+`}}});
-        console.log(tmp.length);
-
-        return JSON.stringify(tmp.map(({id,name, state, path}) => {
-            console.log(`========`)
-            console.log(id,name, state, path)
-
-
-
-                let a  =`\/`+loginparentTaskId+`\/.+`
-                //console.log(a)
-               // console.log(path.match(new RegExp(a))[0].split(`/`).length-2)
-                let deeps = path.match(new RegExp(a))[0].split(`/`).length-2;
-
-
-            return {id, name, state, deeps : deeps}}))
-    }
-*/
 
 
 
 }
-/*
-
-createTask: async ({Task : {name, description, startDate, endDate}, userId, loginparentTaskId})=>{
-
-    console.log(loginparentTaskId)
-
-    let user = await getUserById({id : userId});
-    let taskID;
-
-    if(loginparentTaskId){
-        const parentTask = await Task.findByPk(loginparentTaskId);
-        const {id} = await parentTask.createChild({
-            name : name,
-            description : description,
-            startDate : startDate,
-            endDate: endDate
-        });
-        await Task.update({path : `${parentTask.getDataValue(`path`)}/${id}` },
-            {where: {id : id}})
-        taskID = id;
-
-    } else {
-        const {id} = await user.createTask({
-            name : name,
-            description : description,
-            startDate : startDate,
-            endDate: endDate
-        });
-        await Task.update({path : `/${id}` }, {where: {id : id}});
-        taskID = id;
-    }
-
-    return await Task.findByPk(taskID);
-},*/
