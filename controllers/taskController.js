@@ -22,9 +22,14 @@ module.exports = {
 
     },
 
+    getUserTasks : async ({},{user})=>{
+
+        if (!user) return null
+        return await user.getTasks();
+    },
 
     getUserProjects : async ({},{user})=>{
-        console.log(user);
+
         if (!user) return null
         return await user.getTasks({where :
                                         {path :
@@ -82,6 +87,21 @@ module.exports = {
         return await task.getTaskChildren();
     },
 
+
+    updateTask : async ({Task : task})=>{
+        console.log(task.state)
+     try {
+         const originalTask = await Task.findByPk(task.id);
+         const isUpdated = !!await Task.update({...originalTask, ...task }, {where : {id: task.id}});
+         if(isUpdated) return await Task.findByPk(task.id);
+         return null;
+     }catch (e) {
+         console.log(e)
+         return null
+     }
+
+
+    }
 
 
 }

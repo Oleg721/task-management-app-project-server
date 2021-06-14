@@ -21,22 +21,3 @@ module.exports.sync = async ()=> await sequelize.sync();
 
 
 
-/*(async ()=>{
-   // let us = await addUser({name:`t2`, login : `n2`});
-
-    console.log(`==========================`)
-    console.log(await User.findAll())
-
-
-})()*/
-
-
-/*
-await connectors.sync();
-await User.create({login : `Pit`, name : `Pieter`});
-await Task.create({
-    taskName: `test sk n7`,
-    description : `bla bla bla... `,
-    state : `active`
-})
-*/

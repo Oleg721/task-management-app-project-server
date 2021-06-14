@@ -11,13 +11,14 @@ module.exports = buildSchema(`
           
           getUserById(id: ID):User
           getUsers:[User]
-           
+          
+
+          getUserTasks:[Task]
           getUserProjects:[Task]
           getTaskById(id : ID):Task
           getTaskChildren(Task: TaskInput):[Task]
           getAllTaskChildren(id: ID) : String
-          
-          
+                    
     }
     
     
@@ -26,6 +27,7 @@ module.exports = buildSchema(`
           registration(User: UserInput, password: String): String
           createTask(Task: TaskInput, usersId: [ID], parentTaskId: ID): Task
           createSubTask(Task: TaskInput, parentId: ID): Task
+          updateTask(Task: TaskInput): Task
           
     }
 

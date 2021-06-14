@@ -35,8 +35,6 @@ Task.hasMany(Task, {onDelete: 'CASCADE',
     // console.log(`===================`);
     // console.log(res);
 
-
-
 })()
 
 module.exports.User = User;
